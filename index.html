@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srinjan Ghosh — AI Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav>
+  <a class="nav-logo" href="#home" data-goto="home">Srinjan_Ghosh<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#home"       data-page="home">Home</a></li>
+    <li><a href="#about"      data-page="about">About</a></li>
+    <li><a href="#projects"   data-page="projects">Projects</a></li>
+    <li><a href="#experience" data-page="experience">Experience</a></li>
+    <li><a href="#contact"    data-page="contact">Contact</a></li>
+  </ul>
+  <div class="nav-status">
+    <div class="status-dot"></div>
+    Available for internship
+  </div>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+    <span class="theme-icon theme-icon--dark">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </span>
+    <span class="theme-icon theme-icon--light">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </span>
+
+    
+    <span class="theme-label"></span>
+  </button>
+
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+</nav>
+
+<!-- ─── MOBILE NAV DRAWER ─── -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#home"       data-mobile-page="home">Home</a>
+  <a href="#about"      data-mobile-page="about">About</a>
+  <a href="#projects"   data-mobile-page="projects">Projects</a>
+  <a href="#experience" data-mobile-page="experience">Experience</a>
+  <a href="#contact"    data-mobile-page="contact">Contact</a>
+  <div class="nav-mobile-divider"></div>
+  <div class="nav-mobile-status">
+    <div class="status-dot"></div>
+    Available for internship
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════ -->
+<div id="page-home" class="page">
+  <div class="hero">
+    <div class="hero-glow"></div>
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-tag"><span class="typed-tag"></span><span class="typed-cursor-inline">▋</span></div>
+
+      <h1 class="hero-name">
+        <span class="line1">Srinjan</span>
+        <span class="line2" id="typed-name"></span>
+      </h1>
+
+      <p class="hero-role" id="typed-role">&nbsp;</p>
+
+      <p class="hero-desc">
+        {B.Tech CSE student engineering intelligent systems at the intersection of
+        AI, computer vision, and human impact. Founder of VECTORIX — a nationwide
+        tech community. I build things that matter.
+        }
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary" data-goto="projects">View Projects →</a>
+        <a href="#contact"  class="btn-outline"  data-goto="contact">Get in Touch</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Real Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Community Founded</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Ideas Brewing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: PHOTO -->
+    <div class="hero-right">
+      <div class="photo-frame">
+        <div class="photo-corner tl"></div>
+        <div class="photo-corner tr"></div>
+        <div class="photo-corner bl"></div>
+        <div class="photo-corner br"></div>
+        <!-- Place your photo in the same folder as index.html and name it photo.jpg -->
+        <img class="photo-img" src="images/photo.png" alt="Srinjan Ghosh"
+             onerror="this.style.background='#0d1520';this.removeAttribute('src')">
+        <div class="photo-overlay"></div>
+        <div class="photo-scan"></div>
+        <div class="photo-id-bar">SG · 2025 · VERIFIED</div>
+        <div class="photo-label">ID: <span>SG_0001</span> · ONLINE</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2025 <span>Srinjan Ghosh</span> — All systems operational</div>
+    <div>Built with precision · Powered by curiosity</div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: ABOUT
+═══════════════════════════════════════ -->
+<div id="page-about" class="page" style="display:none">
+<section class="page-section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="about-grid">
+
+    <!-- LEFT: photo + id card -->
+    <div class="about-photo-col fade-in">
+      <div class="about-photo-wrap">
+        <img src="images/port.PNG" alt="Srinjan Ghosh"
+             onerror="this.style.background='#0d1520';this.removeAttribute('src')">
+        <div class="about-photo-border"></div>
+      </div>
+
+      <div class="about-id-card">
+        <div class="id-row">
+          <span class="id-key">Name</span>
+          <span>Srinjan Ghosh</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Role</span>
+          <span>AI Developer</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Location</span>
+          <span>Jaipur, India</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Education</span>
+          <span>B.Tech CSE</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Email</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8bbbaa1a6a2a9a6e6bbbaa1bba0bca188afa5a9a1a4e6aba7a5">[email&#160;protected]</a></span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Phone</span>
+          <span>+91 7003413255</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Status</span>
+          <span style="color:#00f5a0">● Available</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: content -->
+    <div class="about-content-col">
+      <p class="about-intro fade-in">
+        I'm a <strong>Computer Science student</strong> obsessed with building AI systems
+        that solve <strong>real problems</strong> — not just demos. From developing navigation
+        assistants for the visually impaired to medical diagnostic tools, my work lives at the
+        boundary of research and real-world impact.
+        <br><br>
+        I founded <strong>VECTORIX</strong>, a nationwide tech community, to create the kind
+        of collaborative space I wish I'd had — where students build, ship, and grow together.
+        <br><br>
+        Currently seeking <strong>internships in AI, Computer Vision, or Full-Stack</strong>
+        where I can build fast, learn faster, and create lasting impact.
+      </p>
+
+      <blockquote class="about-philosophy fade-in">
+        "I don't build projects to add lines to a CV. I build them because there's a real person
+        on the other end whose life gets a little bit better."
+      </blockquote>
+
+      <div class="skills-section fade-in">
+        <h3>Technical Skills</h3>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Frameworks & Libraries</div>
+          <div class="skill-tags">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">NumPy</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Tools & Platforms</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">ESP32</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Cloud</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Domains</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">IoT</span>
+            <span class="skill-tag">Android Dev</span>
+            <span class="skill-tag">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Soft Skills</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Leadership</span>
+            <span class="skill-tag">Community Building</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Mentorship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div>© 2025 <span>Srinjan Ghosh</span> — All systems operational</div>
+    <div>Built with precision · Powered by curiosity</div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: PROJECTS
+═══════════════════════════════════════ -->
+<div id="page-projects" class="page" style="display:none">
+<section class="page-section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="projects-filter fade-in">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ai">AI / CV</button>
+    <button class="filter-btn" data-filter="iot">IoT</button>
+    <button class="filter-btn" data-filter="community">Community</button>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="proj-card fade-in" data-cat="ai">
+      <div class="proj-num">PROJECT_01 · AI / COMPUTER VISION</div>
+      <div class="proj-icon-area">👁</div>
+      <div class="proj-name">Divya Drishti</div>
+      <div class="proj-desc">
+        AI-powered real-time navigation system built for visually impaired individuals.
+        Uses object detection and voice synthesis to guide users safely through
+        environments — dramatically reducing dependence on traditional walking sticks.
+      </div>
+      <ul class="proj-highlights">
+        <li>Real-time obstacle detection at 30fps using YOLO-based model</li>
+        <li>Voice feedback system with directional audio cues</li>
+        <li>Lightweight model optimized for edge devices</li>
+        <li>Designed with direct input from visually impaired users</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="proj-tech">Python</span>
+        <span class="proj-tech">OpenCV</span>
+        <span class="proj-tech">TensorFlow</span>
+        <span class="proj-tech">YOLO</span>
+        <span class="proj-tech">Text-to-Speech</span>
+      </div>
+    </div>
+
+    <div class="proj-card fade-in" data-cat="ai">
+      <div class="proj-num">PROJECT_02 · MEDICAL AI</div>
+      <div class="proj-icon-area">🧬</div>
+      <div class="proj-name">MedAI</div>
+      <div class="proj-desc">
+        Deep learning diagnostic system that classifies diseases from medical images
+        and generates structured reports with confidence scores — bridging the gap
+        between raw imaging data and actionable clinical insights.
+      </div>
+      <ul class="proj-highlights">
+        <li>CNN-based image classification pipeline</li>
+        <li>Auto-generates PDF diagnostic reports with confidence scores</li>
+        <li>Streamlit UI for clinical deployment</li>
+        <li>Trained on curated medical imaging datasets</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="proj-tech">Python</span>
+        <span class="proj-tech">TensorFlow</span>
+        <span class="proj-tech">Keras</span>
+        <span class="proj-tech">Streamlit</span>
+        <span class="proj-tech">OpenCV</span>
+      </div>
+    </div>
+
+    <div class="proj-card fade-in" data-cat="iot">
+      <div class="proj-num">PROJECT_03 · IoT / AGRICULTURE</div>
+      <div class="proj-icon-area">🌾</div>
+      <div class="proj-name">Smart Agriculture RC Car</div>
+      <div class="proj-desc">
+        IoT-based remote-controlled vehicle for monitoring farm conditions.
+        Autonomously traverses fields collecting environmental data, which is
+        uploaded to the cloud for analysis and recommendation generation for farmers.
+      </div>
+      <ul class="proj-highlights">
+        <li>Sensors: humidity, temperature, soil moisture, pH</li>
+        <li>Real-time data transmission via WiFi to cloud dashboard</li>
+        <li>Generates AI-powered recommendations for farmers</li>
+        <li>ESP32 microcontroller with custom PCB design</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="proj-tech">ESP32</span>
+        <span class="proj-tech">IoT</span>
+        <span class="proj-tech">Cloud</span>
+        <span class="proj-tech">Sensors</span>
+        <span class="proj-tech">Python</span>
+      </div>
+    </div>
+
+    <div class="proj-card fade-in" data-cat="community">
+      <div class="proj-num">PROJECT_04 · COMMUNITY / LEADERSHIP</div>
+      <div class="proj-icon-area">⚡</div>
+      <div class="proj-name">VECTORIX</div>
+      <div class="proj-desc">
+        Founded and scaled a nationwide student tech community focused on collaboration,
+        mentorship, and career development. VECTORIX operates across national, state,
+        and college levels with a structured leadership model.
+      </div>
+      <ul class="proj-highlights">
+        <li>Structured 3-tier leadership: National → State → College</li>
+        <li>Organized hackathons, workshops, and tech talks</li>
+        <li>Built peer mentorship pipeline for student developers</li>
+        <li>Active presence across multiple universities in India</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="proj-tech">Leadership</span>
+        <span class="proj-tech">Community</span>
+        <span class="proj-tech">Mentorship</span>
+        <span class="proj-tech">Events</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <footer>
+    <div>© 2025 <span>Srinjan Ghosh</span> — All systems operational</div>
+    <div>Built with precision · Powered by curiosity</div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: EXPERIENCE
+═══════════════════════════════════════ -->
+<div id="page-experience" class="page" style="display:none">
+<section class="page-section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="experience-layout">
+
+    <!-- TIMELINE -->
+    <div class="timeline-col fade-in">
+      <h3 style="font-size:10px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:2rem;">Click to explore</h3>
+      <div class="timeline">
+
+        <div class="tl-item" data-exp="uem">
+          <div class="tl-year">2023 — Present</div>
+          <div class="tl-name">B.Tech CSE</div>
+          <div class="tl-org">UEM Jaipur</div>
+        </div>
+
+        <div class="tl-item" data-exp="agri">
+          <div class="tl-year">2024</div>
+          <div class="tl-name">UAC Club Lead</div>
+          <div class="tl-org">UEM Aeromodelling Club</div>
+        </div>
+
+        <div class="tl-item" data-exp="vectorix">
+          <div class="tl-year">2025 — Present</div>
+          <div class="tl-name">Founder</div>
+          <div class="tl-org">VECTORIX Community</div>
+        </div>
+
+        <div class="tl-item" data-exp="divyadrishti">
+          <div class="tl-year">2026</div>
+          <div class="tl-name">Lead Developer</div>
+          <div class="tl-org">Divya Drishti Project</div>
+        </div>
+
+        <div class="tl-item" data-exp="medai">
+          <div class="tl-year">2026</div>
+          <div class="tl-name">AI Engineer</div>
+          <div class="tl-org">MedAI System</div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- DETAIL PANEL -->
+    <div class="exp-detail-panel fade-in" data-id="SELECT AN ITEM">
+
+      <div class="exp-detail" id="exp-uem">
+        <div class="exp-detail-tag">Education</div>
+        <div class="exp-detail-title">B.Tech Computer Science Engineering</div>
+        <div class="exp-detail-org">University of Engineering &amp; Management, Jaipur · 2023 — Present</div>
+        <p class="exp-detail-body">
+          Pursuing a Computer Science degree with a focus on AI, machine learning, and
+          systems programming. Balancing academics with independent projects and
+          community leadership at a national scale.
+        </p>
+        <ul class="exp-bullets">
+          <li>Core subjects: Algorithms, OS, ML, Computer Vision, Networks</li>
+          <li>Active participant in university hackathons and coding competitions</li>
+          <li>Consistently applying classroom concepts to real-world projects</li>
+          <li>Maintaining strong academic performance alongside project work</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">B.Tech</span>
+          <span class="exp-tag">CSE</span>
+          <span class="exp-tag">AI/ML Focus</span>
+        </div>
+      </div>
+
+      <div class="exp-detail" id="exp-vectorix">
+        <div class="exp-detail-tag">Founder &amp; Community Lead</div>
+        <div class="exp-detail-title">VECTORIX</div>
+        <div class="exp-detail-org">Nationwide Student Tech Community · 2025 — Present</div>
+        <p class="exp-detail-body">
+          Built VECTORIX from the ground up — a structured, three-tier tech community
+          operating at national, state, and college levels across India. Created the
+          kind of environment where students actually build real things together.
+        </p>
+        <ul class="exp-bullets">
+          <li>Designed and implemented 3-tier leadership hierarchy</li>
+          <li>Organized hackathons, technical workshops, and networking events</li>
+          <li>Built peer mentorship pipelines for student developers</li>
+          <li>Expanding presence to new universities across India</li>
+          <li>Managed cross-institutional collaboration and event logistics</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Leadership</span>
+          <span class="exp-tag">Community</span>
+          <span class="exp-tag">Mentorship</span>
+          <span class="exp-tag">Events</span>
+        </div>
+      </div>
+
+      <div class="exp-detail" id="exp-divyadrishti">
+        <div class="exp-detail-tag">Lead Developer</div>
+        <div class="exp-detail-title">Divya Drishti</div>
+        <div class="exp-detail-org">AI Navigation for the Visually Impaired · 2024</div>
+        <p class="exp-detail-body">
+          Led end-to-end development of a real-time AI navigation assistant for
+          visually impaired individuals. Combined computer vision with audio synthesis
+          to create a practical, low-cost assistive device.
+        </p>
+        <ul class="exp-bullets">
+          <li>Designed object detection pipeline optimized for edge devices</li>
+          <li>Implemented spatial audio feedback for directional guidance</li>
+          <li>Conducted user testing with visually impaired participants</li>
+          <li>Iterated based on real-world feedback for practical usability</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span>
+          <span class="exp-tag">OpenCV</span>
+          <span class="exp-tag">TensorFlow</span>
+          <span class="exp-tag">Assistive Tech</span>
+        </div>
+      </div>
+
+      <div class="exp-detail" id="exp-medai">
+        <div class="exp-detail-tag">AI Engineer</div>
+        <div class="exp-detail-title">MedAI Diagnostic System</div>
+        <div class="exp-detail-org">Medical AI Project · 2024</div>
+        <p class="exp-detail-body">
+          Designed and trained deep learning models for medical image classification.
+          Built a complete end-to-end pipeline from raw image input to structured
+          clinical report output.
+        </p>
+        <ul class="exp-bullets">
+          <li>Trained CNN models on curated medical imaging datasets</li>
+          <li>Implemented confidence-score reporting for clinical trust</li>
+          <li>Deployed full UI via Streamlit for non-technical clinicians</li>
+          <li>Optimized model accuracy vs inference speed tradeoffs</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">TensorFlow</span>
+          <span class="exp-tag">Keras</span>
+          <span class="exp-tag">Streamlit</span>
+          <span class="exp-tag">Medical AI</span>
+        </div>
+      </div>
+
+      <div class="exp-detail" id="exp-agri">
+        <div class="exp-detail-tag">Club Representative</div>
+        <div class="exp-detail-title">UAC – UEM Aeromodelling Club</div>
+        <div class="exp-detail-org">University of Engineering and Management · 2024 – 2025</div>
+      <p class="exp-detail-body">
+          Represented the Aeromodelling Club under UAC, contributing to technical
+          activities, event coordination, and student engagement in aerospace and
+          model aircraft development.
+        </p>
+        <ul class="exp-bullets">
+          <li>Coordinated aeromodelling workshops and technical events</li>
+          <li>Promoted student participation in aircraft design and building activities</li>
+          <li>Collaborated with team members on model aircraft projects and demonstrations</li>
+          <li>Acted as a communication link between club members and university authorities</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Aeromodelling</span>
+          <span class="exp-tag">Leadership</span>
+          <span class="exp-tag">Event Management</span>
+          <span class="exp-tag">Team Collaboration</span>
+        </div>
+      </div>
+
+    </div><!-- /exp-detail-panel -->
+  </div>
+</section>
+
+  <footer>
+    <div>© 2025 <span>Srinjan Ghosh</span> — All systems operational</div>
+    <div>Built with precision · Powered by curiosity</div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════════════ -->
+<div id="page-contact" class="page" style="display:none">
+<section class="page-section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- LEFT -->
+    <div class="fade-in">
+      <div class="contact-headline">
+        Let's
+        <span class="hollow">build</span>
+        something.
+      </div>
+      <p class="contact-intro">
+        Open to internships, freelance collaborations, research partnerships,
+        and conversations about AI, computer vision, and impactful tech.
+        Don't hesitate — reach out.
+      </p>
+
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#7605041f181c17185805041f051e021f36111b171f1a5815191b" class="contact-link-row">
+          <div class="contact-link-icon">✉</div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">Email</span>
+            <span class="__cf_email__" data-cfemail="0c7f7e6562666d62227f7e657f6478654c6b616d6560226f6361">[email&#160;protected]</span>
+          </div>
+        </a>
+        <a href="tel:+917003413255" class="contact-link-row">
+          <div class="contact-link-icon">☏</div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">Phone</span>
+            +91 7003413255
+          </div>
+        </a>
+        <a href="https://github.com/Srinjan-006" target="_blank" rel="noopener" class="contact-link-row">
+          <div class="contact-link-icon">⌥</div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">GitHub</span>
+            github.com/srinjanghosh
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/srinjan-ghosh-962a81286/" target="_blank" rel="noopener" class="contact-link-row">
+          <div class="contact-link-icon">in</div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">LinkedIn</span>
+            linkedin.com/in/srinjanghosh
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form-col fade-in">
+      <form class="contact-form" id="contactForm" autocomplete="off">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me what you're working on..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+      <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:.75rem;letter-spacing:.05em;">
+        I typically reply within 24 hours.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <footer>
+    <div>© 2026 <span>Srinjan Ghosh</span> — All systems operational</div>
+    <div>Built with precision · Powered by curiosity</div>
+  </footer>
+</div>
+
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
