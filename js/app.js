@@ -119,34 +119,72 @@ tlItems.forEach(item => {
 
 if (tlItems.length) activateExp(tlItems[0].dataset.exp);
 
-/* ─── CONTACT FORM ─── */
+/* ─── CONTACT FORM → GOOGLE FORMS ─── */
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfS1rTurs-s143SonDM6z2_pjt64Bz_gvWW3UVEPHjqdRFw/formResponse';
+const ENTRY = {
+  name:    'entry.1146939794',
+  email:   'entry.683678966',
+  subject: 'entry.1379328599',
+  message: 'entry.1094043494'
+};
+
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name    = form.querySelector('#name').value;
-    const email   = form.querySelector('#email').value;
-    const subject = form.querySelector('#subject').value;
-    const message = form.querySelector('#message').value;
 
-    // Replace entry IDs with YOUR actual ones
-    const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfS1rTurs-s143SonDM6z2_pjt64Bz_gvWW3UVEPHjqdRFw/viewform?usp=header';
+    const name    = form.querySelector('#name').value.trim();
+    const email   = form.querySelector('#email').value.trim();
+    const subject = form.querySelector('#subject').value.trim();
+    const message = form.querySelector('#message').value.trim();
+    const btn     = form.querySelector('.form-submit');
+
+    if (!name || !email || !message) {
+      btn.textContent = 'Fill all fields!';
+      btn.style.background = '#ff6b35';
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+      }, 2000);
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.style.background = '#0a1018';
+    btn.disabled = true;
+
     const data = new FormData();
-    data.append('entry.111', name);     // replace with your Name entry ID
-    data.append('entry.222', email);    // replace with your Email entry ID
-    data.append('entry.333', subject);  // replace with your Subject entry ID
-    data.append('entry.444', message);  // replace with your Message entry ID
+    data.append(ENTRY.name,    name);
+    data.append(ENTRY.email,   email);
+    data.append(ENTRY.subject, subject);
+    data.append(ENTRY.message, message);
 
-    fetch(googleFormURL, { method: 'POST', body: data, mode: 'no-cors' })
-
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#00f5a0';
-    setTimeout(() => {
-      btn.textContent = 'Send Message →';
-      btn.style.background = '';
+    fetch(GOOGLE_FORM_ACTION, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors'
+    })
+    .then(() => {
+      btn.textContent      = 'Message Sent ✓';
+      btn.style.background = '#00f5a0';
+      btn.style.color      = '#050a0e';
       form.reset();
-    }, 3000);
+      setTimeout(() => {
+        btn.textContent      = 'Send Message →';
+        btn.style.background = '';
+        btn.style.color      = '';
+        btn.disabled         = false;
+      }, 3500);
+    })
+    .catch(() => {
+      btn.textContent      = 'Error — Try Again';
+      btn.style.background = '#ff6b35';
+      btn.disabled         = false;
+      setTimeout(() => {
+        btn.textContent      = 'Send Message →';
+        btn.style.background = '';
+      }, 3000);
+    });
   });
 }
 
@@ -188,12 +226,8 @@ function closeMobileNav() {
 if (hamburger && mobileNav) {
   hamburger.addEventListener('click', () => {
     const isOpen = mobileNav.classList.contains('open');
-    if (isOpen) {
-      closeMobileNav();
-    } else {
-      hamburger.classList.add('open');
-      mobileNav.classList.add('open');
-    }
+    if (isOpen) { closeMobileNav(); }
+    else { hamburger.classList.add('open'); mobileNav.classList.add('open'); }
   });
 }
 
@@ -208,7 +242,6 @@ mobileLinks.forEach(a => {
   });
 });
 
-// Close drawer when clicking outside
 document.addEventListener('click', e => {
   if (mobileNav && mobileNav.classList.contains('open')) {
     if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
@@ -216,6 +249,7 @@ document.addEventListener('click', e => {
     }
   }
 });
+
 /* ─── TYPING ANIMATION ─── */
 function typeText(el, text, speed, onDone) {
   let i = 0;
@@ -231,14 +265,13 @@ function typeText(el, text, speed, onDone) {
   setTimeout(tick, speed);
 }
 
-// Sequences
-const tagEl   = document.querySelector('.typed-tag');
+const tagEl     = document.querySelector('.typed-tag');
 const tagCursor = document.querySelector('.typed-cursor-inline');
-const nameEl  = document.getElementById('typed-name');
-const roleEl  = document.getElementById('typed-role');
+const nameEl    = document.getElementById('typed-name');
+const roleEl    = document.getElementById('typed-role');
 
-const tagText  = 'AI Developer · CSE Student · Builder';
-const nameText = 'Ghosh';
+const tagText   = 'AI Developer · CSE Student · Builder';
+const nameText  = 'Ghosh';
 const roleTexts = [
   '{ [AI Developer] · [Computer Vision] · [Assistive Tech] }',
   '{ [ML Engineer]  · [Open Source]     · [Builder]        }',
@@ -267,7 +300,6 @@ function cycleRole() {
   });
 }
 
-// Kick off sequence: tag → name → role → cycle
 if (tagEl) {
   typeText(tagEl, tagText, 38, () => {
     if (tagCursor) tagCursor.classList.add('done');
