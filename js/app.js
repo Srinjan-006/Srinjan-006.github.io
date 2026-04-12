@@ -124,6 +124,21 @@ const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
+    const name    = form.querySelector('#name').value;
+    const email   = form.querySelector('#email').value;
+    const subject = form.querySelector('#subject').value;
+    const message = form.querySelector('#message').value;
+
+    // Replace entry IDs with YOUR actual ones
+    const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfS1rTurs-s143SonDM6z2_pjt64Bz_gvWW3UVEPHjqdRFw/viewform?usp=header';
+    const data = new FormData();
+    data.append('entry.111', name);     // replace with your Name entry ID
+    data.append('entry.222', email);    // replace with your Email entry ID
+    data.append('entry.333', subject);  // replace with your Subject entry ID
+    data.append('entry.444', message);  // replace with your Message entry ID
+
+    fetch(googleFormURL, { method: 'POST', body: data, mode: 'no-cors' })
+
     const btn = form.querySelector('.form-submit');
     btn.textContent = 'Message Sent ✓';
     btn.style.background = '#00f5a0';
